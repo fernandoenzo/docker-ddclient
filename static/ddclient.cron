@@ -1,0 +1,7 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Launch ddclient every 20 minutes
+*/20 * * * *  root  ddclient --force --file /etc/ddclient.conf
+1-59/20 * * * *  root  ddclient --force --file /etc/ddclient2.conf
+#
