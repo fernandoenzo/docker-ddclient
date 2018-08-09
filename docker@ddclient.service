@@ -1,0 +1,16 @@
+[Unit]
+Description=Docker DDClient container
+Requires=docker.service
+PartOf=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+
+[Service]
+TimeoutStartSec=infinity
+ExecStart=/usr/bin/docker run -t --init --rm --name DDClient --hostname DDClient fernandoenzo/ddclient
+ExecStop=-/usr/bin/docker stop DDClient
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
+
