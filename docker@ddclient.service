@@ -7,7 +7,8 @@ Wants=network-online.target
 
 [Service]
 TimeoutStartSec=infinity
-ExecStart=/usr/bin/docker run -t --init --rm --name DDClient --hostname DDClient fernandoenzo/ddclient
+ExecStartPre=/usr/bin/docker run -d -it --init --rm --name DDClient --hostname DDClient fernandoenzo/ddclient
+ExecStart=/usr/bin/docker logs -f DDClient
 ExecStop=-/usr/bin/docker stop DDClient
 SuccessExitStatus=143
 
