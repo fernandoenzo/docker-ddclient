@@ -8,4 +8,3 @@ COPY static/ddclient.cron /etc/cron.d/ddclient
 COPY scripts/basics /tmp
 RUN bash /tmp/basics
 
-ENTRYPOINT service cron start > /dev/null 2>&1 ; /bin/bash
