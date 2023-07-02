@@ -1,5 +1,4 @@
-FROM ghcr.io/fernandoenzo/debian:11
-MAINTAINER Fernando Enzo Guarini (fernandoenzo@gmail.com)
+FROM ghcr.io/fernandoenzo/debian:12
 
 COPY static/ddclient.conf /etc
 COPY static/ddclient2.conf /etc
