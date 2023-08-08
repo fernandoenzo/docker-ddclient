@@ -4,6 +4,12 @@ set -e  # Exit immediately if a command exits with a non-zero status.
 set -x  # All executed commands are printed to the terminal
 
 aptitude update ; aptitude install -y ddclient liblwp-protocol-https-perl
+
+mv /tmp/contents/static/ddclient.conf /etc
+mv /tmp/contents/static/ddclient2.conf /etc
+mv /tmp/contents/static/ddclient.default /etc/default/ddclient
+mv /tmp/contents/static/ddclient.cron /etc/cron.d/ddclient
+
 apt-get -y autoremove ; aptitude -y autoclean ; apt-get -y autoclean
 rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /root/.aptitude
 
